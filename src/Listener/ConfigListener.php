@@ -331,10 +331,10 @@ class ConfigListener extends AbstractListener implements
         if (!is_array($config)) {
             throw new Exception\InvalidArgumentException(
                 sprintf(
-                    'Config being merged must be an array, '
+                    'Config for key "%s" being merged must be an array, '
                     . 'implement the Traversable interface, or be an '
                     . 'instance of Zend\Config\Config. %s given.',
-                    gettype($config)
+                    $key, gettype($config)
                 )
             );
         }
